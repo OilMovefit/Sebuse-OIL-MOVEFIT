@@ -33,6 +33,7 @@
         .dashboard {
             display: flex;
             justify-content: space-around;
+            flex-wrap: wrap;
             margin: 40px auto;
             max-width: 1000px;
             padding: 0 20px;
@@ -49,6 +50,7 @@
             text-align: center;
             font-size: 1.2em;
             width: 200px;
+            margin: 10px;
             transition: background-color 0.3s ease;
         }
 
@@ -71,11 +73,23 @@
             margin: 0;
             font-size: 1.1em;
         }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            .dashboard a {
+                width: 100%;
+                font-size: 1em;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Klasemen SEBUSE Oil Movefit 2.0</h1>
+        <h1>Klasemen Olahraga</h1>
     </header>
 
     <!-- Dashboard Menu -->
@@ -85,9 +99,9 @@
         <a href="sepeda-male.html">Sepeda (Pria)</a>
         <a href="sepeda-female.html">Sepeda (Wanita)</a>
     </div>
-
+    
     <footer>
-        <p>&copy; 2024 Klasemen SEBUSE Oil Movefit 2.0</p>
+        <p>&copy; 2024 Klasemen Olahraga</p>
     </footer>
 </body>
 </html>
