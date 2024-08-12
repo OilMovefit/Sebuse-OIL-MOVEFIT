@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klasemen Sepeda (Wanita)</title>
+    <title>Jalan (Wanita)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -62,10 +62,6 @@
             margin-top: 20px;
         }
 
-        table, th, td {
-            border: none;
-        }
-
         th, td {
             padding: 15px;
             text-align: center;
@@ -89,10 +85,6 @@
             transition: background-color 0.3s ease;
         }
 
-        td {
-            color: #555;
-        }
-
         footer {
             text-align: center;
             padding: 20px 0;
@@ -107,11 +99,27 @@
             margin: 0;
             font-size: 1.1em;
         }
+
+        /* Responsif */
+        @media (max-width: 600px) {
+            header h1 {
+                font-size: 1.8em;
+            }
+
+            h2 {
+                font-size: 1.4em;
+            }
+
+            th, td {
+                font-size: 0.9em;
+                padding: 10px;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>Klasemen Week ke-2</h1>
+        <h1>Klasemen SEBUSE Week ke-2</h1>
     </header>
 
     <main>
@@ -122,14 +130,14 @@
                     <tr>
                         <th>Peringkat</th>
                         <th>Nama</th>
-                        <th>Waktu</th>
+                        <th>Jarak</th>
                     </tr>
                     <!-- Tambahkan data di sini -->
                 </table>
             </div>
         </section>
     </main>
-    
+
     <footer>
         <p>&copy; 2024 Klasemen SEBUSE Oil Movefit 2.0</p>
     </footer>
