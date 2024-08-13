@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Klasemen SEBUSE Week ke-2</title>
+    <title>Klasemen Olahraga</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -16,18 +16,22 @@
         }
 
         header {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             color: #333;
             padding: 40px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
             font-weight: 600;
+            letter-spacing: 1px;
         }
 
         .dashboard {
@@ -37,6 +41,7 @@
             margin: 40px auto;
             max-width: 1000px;
             padding: 0 20px;
+            animation: fadeIn 1s ease-in-out;
         }
 
         .dashboard a {
@@ -51,18 +56,19 @@
             font-size: 1.2em;
             width: 200px;
             margin: 10px;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .dashboard a:hover {
             background-color: #e3e9f2;
+            transform: translateY(-5px);
             cursor: pointer;
         }
 
         footer {
             text-align: center;
             padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             color: #555;
             backdrop-filter: blur(10px);
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
@@ -72,6 +78,18 @@
         footer p {
             margin: 0;
             font-size: 1.1em;
+        }
+
+        /* Animasi untuk kemunculan elemen */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
 
         /* Responsif */
@@ -89,7 +107,7 @@
 </head>
 <body>
     <header>
-        <h1>Klasemen Olahraga</h1>
+        <h1>Klasemen SEBUSE Oil Movefit 2.0</h1>
     </header>
 
     <!-- Dashboard Menu -->
@@ -101,7 +119,7 @@
     </div>
     
     <footer>
-        <p>&copy; 2024 Klasemen SEBUSE Oil Movefit 2.0</p>
+        <p>&copy; 2024 PT Kilang Pertamina Internasional RU II Dumai - Oil Movement</p>
     </footer>
 </body>
 </html>
