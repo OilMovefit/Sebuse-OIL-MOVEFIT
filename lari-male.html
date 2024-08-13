@@ -16,18 +16,22 @@
         }
 
         header {
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             color: #333;
             padding: 40px 0;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         header h1 {
             margin: 0;
             font-size: 2.5em;
             font-weight: 600;
+            letter-spacing: 1px;
         }
 
         main {
@@ -42,10 +46,22 @@
 
         h2 {
             color: #333;
-            font-size: 1.8em;
+            font-size: 2em;
             margin-bottom: 20px;
             text-align: center;
             text-transform: uppercase;
+            position: relative;
+        }
+
+        h2:after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background-color: #87a8d0;
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            bottom: -10px;
         }
 
         .table-container {
@@ -54,6 +70,8 @@
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
             backdrop-filter: blur(10px);
+            overflow-x: auto; /* Untuk membuat tabel dapat digeser ke samping pada mobile */
+            animation: fadeIn 1s ease-in-out;
         }
 
         table {
@@ -67,6 +85,7 @@
             text-align: center;
             font-size: 1.1em;
             color: #333;
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         th {
@@ -80,15 +99,15 @@
         }
 
         tr:hover {
-            background-color: #e3e9f2;
+            background-color: #87a8d0;
+            color: white;
             cursor: pointer;
-            transition: background-color 0.3s ease;
         }
 
         footer {
             text-align: center;
             padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.8);
+            background-color: rgba(255, 255, 255, 0.9);
             color: #555;
             backdrop-filter: blur(10px);
             box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
@@ -100,6 +119,18 @@
             font-size: 1.1em;
         }
 
+        /* Animasi untuk kemunculan elemen */
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
         /* Responsif */
         @media (max-width: 600px) {
             header h1 {
@@ -107,12 +138,26 @@
             }
 
             h2 {
-                font-size: 1.4em;
+                font-size: 1.6em;
             }
 
             th, td {
                 font-size: 0.9em;
                 padding: 10px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            .table-container {
+                padding: 10px;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            main {
+                max-width: 80%;
             }
         }
     </style>
@@ -130,70 +175,202 @@
                     <tr>
                         <th>Peringkat</th>
                         <th>Nama</th>
-                        <th>Jarak</th>
+                        <th>Total Week 1</th>
+                        <th>Main 1 Week 2</th>
+                        <th>Main 2 Week 2</th>
+                        <th>Main 3 Week 2</th>
+                        <th>Main 4 Week 2</th>
+                        <th>Akumulasi Jarak</th>
                     </tr>
                     <tr>
                         <th>1</th>
-                        <th>Willy Prima</th>
-                        <th>12,77 KM</th>
+                        <td>M khairil umam</td>
+                        <td>28,89 KM</td>
+                        <td>12,21 KM</td>
+                        <td>10,01 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>51,11 KM</td>
                     </tr>
                     <tr>
                         <th>2</th>
-                        <th>M khairil Umam</th>
-                        <th>12,21 KM</th>
+                        <td>Qolbi Salim F.</td>
+                        <td>24,93 KM</td>
+                        <td>12,01 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>36,94 KM</td>
                     </tr>
                     <tr>
                         <th>3</th>
-                        <th>Qolbi Salim F.</th>
-                        <th>12,01 KM</th>
+                        <td>Muhammad Arfan</td>
+                        <td>17,69 KM</td>
+                        <td>11,23 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>28,92 KM</td>
                     </tr>
                     <tr>
                         <th>4</th>
-                        <th>Muhammad Arfan</th>
-                        <th>11,23 KM</th>
+                        <td>Willy Prima</td>
+                        <td>8,73 KM</td>
+                        <td>12,77 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>21,50 KM</td>
                     </tr>
                     <tr>
                         <th>5</th>
-                        <th>Dibyo Prahadi</th>
-                        <th>7,02 KM</th>
+                        <td>Dibyo Prahardi</td>
+                        <td>11,78 KM</td>
+                        <td>7,02 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>18,80 KM</td>
                     </tr>
                     <tr>
                         <th>6</th>
-                        <th>Weky Putra</th>
-                        <th>6,30 KM</th>
+                        <td>Muhammad Adlan Adam</td>
+                        <td>11,19 KM</td>
+                        <td>4,63 KM</td>
+                        <td>1,78 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>17,60 KM</td>
                     </tr>
                     <tr>
                         <th>7</th>
-                        <th>Datu Ritiro</th>
-                        <th>6,06 KM</th>
+                        <td>Yudha Mahardika</td>
+                        <td>15,44 KM</td>
+                        <td>1,82 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>17,26 KM</td>
                     </tr>
                     <tr>
                         <th>8</th>
-                        <th>Muhammad Adlan Adam</th>
-                        <th>4,63 KM</th>
+                        <td>Weky Putra</td>
+                        <td>5,64 KM</td>
+                        <td>6,30 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>11,94 KM</td>
                     </tr>
                     <tr>
                         <th>9</th>
-                        <th>Muhammad Irfan</th>
-                        <th>3,94 KM</th>
+                        <td>Irwandi</td>
+                        <td>10,15 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>10,15 KM</td>
                     </tr>
                     <tr>
                         <th>10</th>
-                        <th>Yudha Mahardika</th>
-                        <th>1,82 KM</th>
+                        <td>Muhammad Irfan</td>
+                        <td>-</td>
+                        <td>3,94 KM</td>
+                        <td>6,00 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>9,94 KM</td>
                     </tr>
                     <tr>
                         <th>11</th>
-                        <th>Hadi Sulisto</th>
-                        <th>0,36 KM</th>
+                        <td>Marten Wahyudi</td>
+                        <td>4,43 KM</td>
+                        <td>5,02 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>9,45 KM</td>
+                    </tr>
+                    <tr>
+                        <th>12</th>
+                        <td>Bayu Hadi</td>
+                        <td>7,52 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>7,52 KM</td>
+                    </tr>
+                    <tr>
+                        <th>13</th>
+                        <td>Hadi sulistio</td>
+                        <td>6,41 KM</td>
+                        <td>0,36 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>6,77 KM</td>
+                    </tr>
+                    <tr>
+                        <th>14</th>
+                        <td>Dwi Sandi Fatra</td>
+                        <td>6,30 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>6,30 KM</td>
+                    </tr>
+                    <tr>
+                        <th>15</th>
+                        <td>Patur Rahman Pangaduan Siregar</td>
+                        <td>6,27 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>6,27 KM</td>
+                    </tr>
+                    <tr>
+                        <th>16</th>
+                        <td>Datu Ritiro</td>
+                        <td>-</td>
+                        <td>6,06 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>6,06 KM</td>
+                    </tr>
+                    <tr>
+                        <th>17</th>
+                        <td>Muhammad Ali Ridlo</td>
+                        <td>5,40 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>5,40 KM</td>
+                    </tr><tr>
+                        <th>18</th>
+                        <td>Muhammad Nazri</td>
+                        <td>3,00 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>3,00 KM</td>
                     </tr>
                 </table>
+            </div>
+            <div style="text-align: center; margin-top: 20px;">
+                <a href="index.html" style="display: inline-block; padding: 10px 20px; background-color: #87a8d0; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Kembali ke Beranda</a>
             </div>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2024 Klasemen SEBUSE Oil Movefit 2.0</p>
+        <p>&copy; 2024 PT Kilang Pertamina Internasional RU II Dumai - Oil Movement</p>
     </footer>
 </body>
 </html>
