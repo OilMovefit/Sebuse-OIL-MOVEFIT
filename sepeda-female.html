@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jalan (Wanita)</title>
+    <title>Sepeda (Female)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -11,17 +11,16 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            color: #444;
+            background: linear-gradient(135deg, #2b2b2b, #1c1c1c);
+            color: #ddd;
         }
 
         header {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #333;
+            background: rgba(40, 40, 40, 0.9);
+            color: #e0e0e0;
             padding: 40px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -29,25 +28,35 @@
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
-            font-weight: 600;
+            font-size: 2.8em;
+            font-weight: 700;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         main {
             max-width: 1000px;
-            margin: 40px auto;
+            margin: 50px auto;
             padding: 0 20px;
+            background-color: rgba(30, 30, 30, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(10px);
         }
 
         section {
-            margin-bottom: 40px;
+            padding: 30px;
+            border-bottom: 2px solid #3a3a3a;
+        }
+
+        section:last-child {
+            border-bottom: none;
         }
 
         h2 {
-            color: #333;
-            font-size: 2em;
-            margin-bottom: 20px;
+            color: #e0e0e0;
+            font-size: 2.2em;
+            margin-bottom: 30px;
             text-align: center;
             text-transform: uppercase;
             position: relative;
@@ -55,22 +64,21 @@
 
         h2:after {
             content: '';
-            width: 80px;
-            height: 4px;
-            background-color: #87a8d0;
+            width: 100px;
+            height: 5px;
+            background-color: #e94560;
             position: absolute;
             left: 50%;
             transform: translateX(-50%);
-            bottom: -10px;
+            bottom: -15px;
         }
 
         .table-container {
-            background-color: rgba(255, 255, 255, 0.9);
+            background-color: rgba(40, 40, 40, 0.9);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
-            overflow-x: auto; /* Untuk membuat tabel dapat digeser ke samping pada mobile */
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
+            overflow-x: auto;
             animation: fadeIn 1s ease-in-out;
         }
 
@@ -84,42 +92,62 @@
             padding: 15px;
             text-align: center;
             font-size: 1.1em;
-            color: #333;
+            color: #e0e0e0;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         th {
-            background-color: #87a8d0;
+            background-color: #e94560;
             color: white;
             font-weight: 600;
         }
 
         tr:nth-child(even) {
-            background-color: #f0f4f8;
+            background-color: #333;
         }
 
         tr:hover {
-            background-color: #87a8d0;
+            background-color: #e94560;
             color: white;
             cursor: pointer;
         }
 
+        .button-container {
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .button-container a {
+            display: inline-block;
+            padding: 12px 25px;
+            background-color: #e94560;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .button-container a:hover {
+            background-color: #ff5e62;
+            transform: translateY(-3px);
+        }
+
         footer {
             text-align: center;
-            padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #555;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px 0;
+            background: rgba(40, 40, 40, 0.9);
+            color: #bbb;
             margin-top: 50px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
         }
 
         footer p {
             margin: 0;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 400;
         }
 
-        /* Animasi untuk kemunculan elemen */
         @keyframes fadeIn {
             0% {
                 opacity: 0;
@@ -131,14 +159,13 @@
             }
         }
 
-        /* Responsif */
         @media (max-width: 600px) {
             header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             h2 {
-                font-size: 1.6em;
+                font-size: 1.8em;
             }
 
             th, td {
@@ -146,12 +173,12 @@
                 padding: 10px;
             }
 
-            table {
-                font-size: 0.9em;
-            }
-
             .table-container {
                 padding: 10px;
+            }
+
+            .button-container a {
+                padding: 10px 20px;
             }
         }
 
@@ -164,7 +191,7 @@
 </head>
 <body>
     <header>
-        <h1>Klasemen SEBUSE Week ke-2</h1>
+        <h1>Klasemen SEBUSE Week ke-3</h1>
     </header>
 
     <main>
@@ -175,50 +202,48 @@
                     <tr>
                         <th>Peringkat</th>
                         <th>Nama</th>
-                        <th>Total Week 1</th>
-                        <th>Main 1 Week 2</th>
-                        <th>Main 2 Week 2</th>
-                        <th>Main 3 Week 2</th>
-                        <th>Main 4 Week 2</th>
+                        <th>Total Week 1&2</th>
+                        <th>Main 1 Week 3</th>
+                        <th>Main 2 Week 3</th>
+                        <th>Main 3 Week 3</th>
+                        <th>Main 4 Week 3</th>
                         <th>Akumulasi Jarak</th>
                     </tr>
                     <tr>
                         <th>1</th>
                         <td>Fitria Rizky Harsuci</td>
-                        <td>55,46 KM</td>
-                        <td>22,50 KM</td>
-                        <td>10,24 KM</td>
-                        <td>26,00 KM</td>
-                        <td>27,34 KM</td>
                         <td>141,54 KM</td>
+                        <td>32,04 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>173,58 KM</td>
                     </tr>
                     <tr>
                         <th>2</th>
                         <td>Citra Ayu Distira</td>
-                        <td>45,72 KM</td>
-                        <td>27,53 KM</td>
-                        <td>15,47 KM</td>
-                        <td>16,23 KM</td>
-                        <td>29,18 KM</td>
                         <td>134,13 KM</td>
+                        <td>20,52 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>154,65 KM</td>
                     </tr>
-                    
-                    
                     <tr>
                         <th>3</th>
                         <td>Bella Pratiwi</td>
-                        <td>22,32 KM</td>
-                        <td>8,49 KM</td>
-                        <td>15,13 KM</td>
-                        <td>8,81 KM</td>
+                        <td>54,75 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
                         <td>-</td>
                         <td>54,75 KM</td>
                     </tr>
                     <tr>
                         <th>4</th>
-                        <td>Nitya wita utama</td>
-                        <td>-</td>
+                        <td>Nitya Wita Utama</td>
                         <td>0,78 KM</td>
+                        <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
@@ -226,8 +251,8 @@
                     </tr>
                 </table>
             </div>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="index.html" style="display: inline-block; padding: 10px 20px; background-color: #87a8d0; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Kembali ke Beranda</a>
+            <div class="button-container">
+                <a href="index.html">Kembali ke Beranda</a>
             </div>
         </section>
     </main>
