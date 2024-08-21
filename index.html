@@ -11,17 +11,16 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
-            color: #444;
+            background: linear-gradient(135deg, #2b2b2b, #1c1c1c);
+            color: #ddd;
         }
 
         header {
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #333;
+            background: rgba(40, 40, 40, 0.9);
+            color: #e0e0e0;
             padding: 40px 0;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             position: sticky;
             top: 0;
             z-index: 1000;
@@ -29,16 +28,17 @@
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-size: 2.8em;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
         }
 
         .dashboard {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
-            margin: 40px auto;
+            margin: 50px auto;
             max-width: 1000px;
             padding: 0 20px;
             animation: fadeIn 1s ease-in-out;
@@ -46,38 +46,55 @@
 
         .dashboard a {
             text-decoration: none;
-            color: #333;
-            background-color: rgba(255, 255, 255, 0.9);
+            color: #e0e0e0;
+            background: rgba(50, 50, 50, 0.9);
             padding: 20px;
             border-radius: 15px;
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
-            backdrop-filter: blur(10px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
             text-align: center;
-            font-size: 1.2em;
-            width: 200px;
-            margin: 10px;
-            transition: background-color 0.3s ease, transform 0.3s ease;
+            font-size: 1.4em;
+            width: 220px;
+            margin: 15px;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .dashboard a::before {
+            content: '';
+            position: absolute;
+            top: -75px;
+            left: -75px;
+            width: 200%;
+            height: 200%;
+            background: rgba(255, 255, 255, 0.1);
+            transform: rotate(45deg);
+            transition: all 0.6s ease;
+        }
+
+        .dashboard a:hover::before {
+            top: -50px;
+            left: -50px;
         }
 
         .dashboard a:hover {
-            background-color: #e3e9f2;
-            transform: translateY(-5px);
-            cursor: pointer;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
+            transform: translateY(-10px);
         }
 
         footer {
             text-align: center;
-            padding: 20px 0;
-            background-color: rgba(255, 255, 255, 0.9);
-            color: #555;
-            backdrop-filter: blur(10px);
-            box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px 0;
+            background: rgba(40, 40, 40, 0.9);
+            color: #bbb;
             margin-top: 50px;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
         }
 
         footer p {
             margin: 0;
-            font-size: 1.1em;
+            font-size: 1.2em;
+            font-weight: 400;
         }
 
         /* Animasi untuk kemunculan elemen */
@@ -95,12 +112,12 @@
         /* Responsif */
         @media (max-width: 600px) {
             header h1 {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             .dashboard a {
                 width: 100%;
-                font-size: 1em;
+                font-size: 1.1em;
             }
         }
     </style>
