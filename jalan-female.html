@@ -11,42 +11,50 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #2b2b2b, #1c1c1c);
+            background: #1a1a1a;
             color: #ddd;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #222222, #111111);
         }
 
         header {
-            background: rgba(40, 40, 40, 0.9);
-            color: #e0e0e0;
-            padding: 40px 0;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 40px 0;
+            text-align: center;
+            background: rgba(34, 34, 34, 0.8);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.8em;
+            font-size: 3em;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            color: #ff8c00;
+            background: linear-gradient(135deg, #ff8c00, #ff0099);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         main {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 50px auto;
-            padding: 0 20px;
-            background-color: rgba(30, 30, 30, 0.8);
+            padding: 20px;
+            background-color: rgba(34, 34, 34, 0.9);
             border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
         }
 
         section {
             padding: 30px;
-            border-bottom: 2px solid #3a3a3a;
+            border-bottom: 2px solid #444;
         }
 
         section:last-child {
@@ -59,27 +67,18 @@
             margin-bottom: 30px;
             text-align: center;
             text-transform: uppercase;
-            position: relative;
-        }
-
-        h2:after {
-            content: '';
-            width: 100px;
-            height: 5px;
-            background-color: #e94560;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -15px;
+            background: linear-gradient(135deg, #ff8c00, #ff0099);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .table-container {
-            background-color: rgba(40, 40, 40, 0.9);
+            background-color: rgba(50, 50, 50, 0.9);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
             overflow-x: auto;
-            animation: fadeIn 1s ease-in-out;
         }
 
         table {
@@ -97,9 +96,10 @@
         }
 
         th {
-            background-color: #e94560;
+            background-color: #ff5e62;
             color: white;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
         tr:nth-child(even) {
@@ -107,7 +107,7 @@
         }
 
         tr:hover {
-            background-color: #e94560;
+            background-color: #ff5e62;
             color: white;
             cursor: pointer;
         }
@@ -120,12 +120,14 @@
         .button-container a {
             display: inline-block;
             padding: 12px 25px;
-            background-color: #e94560;
+            background: rgba(255, 94, 98, 0.8);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-weight: 600;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
         }
 
         .button-container a:hover {
@@ -136,7 +138,7 @@
         footer {
             text-align: center;
             padding: 30px 0;
-            background: rgba(40, 40, 40, 0.9);
+            background: rgba(34, 34, 34, 0.8);
             color: #bbb;
             margin-top: 50px;
             box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
@@ -146,17 +148,6 @@
             margin: 0;
             font-size: 1.2em;
             font-weight: 400;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         @media (max-width: 600px) {
@@ -191,7 +182,7 @@
 </head>
 <body>
     <header>
-        <h1>Klasemen SEBUSE Week ke-3</h1>
+        <h1>Klasemen SEBUSE Week ke-4</h1>
     </header>
 
     <main>
@@ -202,144 +193,156 @@
                     <tr>
                         <th>Peringkat</th>
                         <th>Nama</th>
-                        <th>Total Week 1&2</th>
+                        <th>Total Week (1,2,3)</th>
                         <th>Main 1 Week 3</th>
                         <th>Main 2 Week 3</th>
                         <th>Main 3 Week 3</th>
                         <th>Main 4 Week 3</th>
                         <th>Akumulasi Jarak</th>
                     </tr>
+                    <!-- Contoh Data -->
                     <tr>
                         <th>1</th>
                         <td>Putri Aisyah Sinuhaji</td>
-                        <td>80,93 KM</td>
-                        <td>10,26 KM</td>
-                        <td>10,92 KM</td>
-                        <td>11,47 KM</td>
-                        <td>12,07 KM</td>
                         <td>125,65 KM</td>
+                        <td>11,03 KM</td>
+                        <td>12,15 KM</td>
+                        <td>11,20 KM</td>
+                        <td>-</td>
+                        <td>160,03 KM</td>
                     </tr>
                     <tr>
                         <th>2</th>
                         <td>Kayle Rinjani</td>
-                        <td>79,04 KM</td>
-                        <td>9,87 KM</td>
-                        <td>11,11 KM</td>
-                        <td>4,19 KM</td>
-                        <td>11,90 KM</td>
                         <td>116,11 KM</td>
+                        <td>11,01 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>127,12 KM</td>
                     </tr>
+
                     <tr>
                         <th>3</th>
                         <td>Erna Rahmalia Bukit</td>
-                        <td>53,87 KM</td>
-                        <td>11,60 KM</td>
-                        <td>11,45 KM</td>
-                        <td>11,53 KM</td>
-                        <td>11,88 KM</td>
-                        <td>100,33 KM</td>
+                        <td>97,97 KM</td>
+                        <td>11,24 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>109,21 KM</td>
                     </tr>
+
                     <tr>
                         <th>4</th>
                         <td>Maria Ulfa</td>
-                        <td>51,34 KM</td>
-                        <td>10,54 KM</td>
-                        <td>11,14 KM</td>
-                        <td>11,41 KM</td>
-                        <td>11,21 KM</td>
-                        <td>95,64 KM</td>
-                    </tr>            
+                        <td>85,28 KM</td>
+                        <td>11,50 KM</td>
+                        <td>11,42 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>108,20 KM</td>
+                    </tr>
+
                     <tr>
                         <th>5</th>
-                        <td>Astriani Amhil</td>
-                        <td>40,42 KM</td>
-                        <td>2,75 KM</td>
-                        <td>6,11 KM</td>
-                        <td>4,22 KM</td>
+                        <td>Nadila Amelia</td>
+                        <td>44,42 KM</td>
+                        <td>11,30 KM</td>
+                        <td>11,56 KM</td>
                         <td>-</td>
-                        <td>53,50 KM</td>
+                        <td>-</td>
+                        <td>67,28 KM</td>
                     </tr>
+
                     <tr>
                         <th>6</th>
                         <td>Rani Syafnidar</td>
-                        <td>18,24 KM</td>
-                        <td>5,05 KM</td>
-                        <td>8,65 KM</td>
-                        <td>9,49 KM</td>
-                        <td>4,70 KM</td>
                         <td>46,13 KM</td>
+                        <td>8,48 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>54,61 KM</td>
                     </tr>
+
                     <tr>
                         <th>7</th>
-                        <td>Nadila Amelia</td>
-                        <td>17,43 KM</td>
-                        <td>6,90 KM</td>
-                        <td>6,03 KM</td>
-                        <td>7,03 KM</td>
-                        <td>7,03 KM</td>
-                        <td>44,42 KM</td>
+                        <td>Astriani Amhil</td>
+                        <td>53,50 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>53,50 KM</td>
                     </tr>
+
                     <tr>
                         <th>8</th>
-                        <td>Endang juwita</td>
-                        <td>25,77 KM</td>
-                        <td>3,50 KM</td>
-                        <td>2,35 KM</td>
-                        <td>1,91 KM</td>
+                        <td>Iin herman</td>
+                        <td>30,50 KM</td>
+                        <td>5,77 KM</td>
+                        <td>4,23 KM</td>
                         <td>-</td>
-                        <td>33,53 KM</td>
+                        <td>-</td>
+                        <td>40,50 KM</td>
                     </tr>
+
                     <tr>
                         <th>9</th>
+                        <td>Endang juwita</td>
+                        <td>33,53 KM</td>
+                        <td>4,57 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>38,10 KM</td>
+                    </tr>
+
+                    <tr>
+                        <th>10</th>
+                        <td>Pertiwi Handayani</td>
+                        <td>27,81 KM</td>
+                        <td>5,71 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>33,52 KM</td>
+                    </tr>
+
+                    <tr>
+                        <th>11</th>
+                        <td>Putri Ayu</td>
+                        <td>28,23 KM</td>
+                        <td>5,25 KM</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>33,48 KM</td>
+                    </tr>
+
+                    <tr>
+                        <th>12</th>
                         <td>Sri Yoce Yunita</td>
-                        <td>21,89 KM</td>
-                        <td>5,09 KM</td>
-                        <td>4,69 KM</td>
+                        <td>31,67 KM</td>
+                        <td>-</td>
+                        <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>31,67 KM</td>
                     </tr>
-                    <tr>
-                        <th>10</th>
-                        <td>Iin herman</td>
-                        <td>15,36 KM</td>
-                        <td>4,33 KM</td>
-                        <td>5,37 KM</td>
-                        <td>5,44 KM</td>
-                        <td>-</td>
-                        <td>30,50 KM</td>
-                    </tr>
-                    <tr>
-                        <th>11</th>
-                        <td>Putri Ayu</td>
-                        <td>13,03</td>
-                        <td>5,08 KM</td>
-                        <td>5,50 KM</td>
-                        <td>4,62 KM</td>
-                        <td>-</td>
-                        <td>28,23 KM</td>
-                    </tr>
-                   
-                    <tr>
-                        <th>12</th>
-                        <td>Pertiwi Handayani</td>
-                        <td>19,18 KM</td>
-                        <td>8,63 KM</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>-</td>
-                        <td>27,81 KM</td>
-                    </tr>
+
                     <tr>
                         <th>13</th>
                         <td>Penny Misdi</td>
+                        <td>14,07 KM</td>
+                        <td>7,87 KM</td>
                         <td>-</td>
-                        <td>6,22 KM</td>
-                        <td>5,30 KM</td>
-                        <td>8,77 KM</td>
                         <td>-</td>
-                        <td>20,29 KM</td>
+                        <td>-</td>
+                        <td>21,94 KM</td>
                     </tr>
+
                     <tr>
                         <th>14</th>
                         <td>Adhyka Audina</td>
@@ -350,10 +353,10 @@
                         <td>-</td>
                         <td>18,77 KM</td>
                     </tr>
-                    
+
                     <tr>
                         <th>15</th>
-                        <td>Mikhrajtun Magfirah</td>
+                        <td>Mikhrajtun Magfirahi</td>
                         <td>10,89 KM</td>
                         <td>-</td>
                         <td>-</td>
@@ -361,6 +364,7 @@
                         <td>-</td>
                         <td>10,89 KM</td>
                     </tr>
+
                     <tr>
                         <th>16</th>
                         <td>Emi Gusneti</td>
@@ -371,6 +375,7 @@
                         <td>-</td>
                         <td>6,30 KM</td>
                     </tr>
+
                     <tr>
                         <th>17</th>
                         <td>Reni Alfera</td>
@@ -381,6 +386,7 @@
                         <td>-</td>
                         <td>4,48 KM</td>
                     </tr>
+
                     <tr>
                         <th>18</th>
                         <td>Anita Cindra Kasih</td>
@@ -391,6 +397,7 @@
                         <td>-</td>
                         <td>4,01 KM</td>
                     </tr>
+                    
                 </table>
             </div>
             <div class="button-container">
