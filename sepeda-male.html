@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sepeda (Male)</title>
+    <title>SEPEDA (Male)</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
@@ -11,42 +11,50 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #2b2b2b, #1c1c1c);
+            background: #1a1a1a;
             color: #ddd;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #222222, #111111);
         }
 
         header {
-            background: rgba(40, 40, 40, 0.9);
-            color: #e0e0e0;
-            padding: 40px 0;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
             position: sticky;
             top: 0;
             z-index: 1000;
+            padding: 40px 0;
+            text-align: center;
+            background: rgba(34, 34, 34, 0.8);
+            backdrop-filter: blur(10px);
+            color: #fff;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.8em;
+            font-size: 3em;
             font-weight: 700;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
             text-transform: uppercase;
+            color: #ff8c00;
+            background: linear-gradient(135deg, #ff8c00, #ff0099);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         main {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 50px auto;
-            padding: 0 20px;
-            background-color: rgba(30, 30, 30, 0.8);
+            padding: 20px;
+            background-color: rgba(34, 34, 34, 0.9);
             border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
         }
 
         section {
             padding: 30px;
-            border-bottom: 2px solid #3a3a3a;
+            border-bottom: 2px solid #444;
         }
 
         section:last-child {
@@ -59,27 +67,18 @@
             margin-bottom: 30px;
             text-align: center;
             text-transform: uppercase;
-            position: relative;
-        }
-
-        h2:after {
-            content: '';
-            width: 100px;
-            height: 5px;
-            background-color: #e94560;
-            position: absolute;
-            left: 50%;
-            transform: translateX(-50%);
-            bottom: -15px;
+            background: linear-gradient(135deg, #ff8c00, #ff0099);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
         }
 
         .table-container {
-            background-color: rgba(40, 40, 40, 0.9);
+            background-color: rgba(50, 50, 50, 0.9);
             padding: 20px;
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
             overflow-x: auto;
-            animation: fadeIn 1s ease-in-out;
         }
 
         table {
@@ -97,9 +96,10 @@
         }
 
         th {
-            background-color: #e94560;
+            background-color: #ff5e62;
             color: white;
             font-weight: 600;
+            text-transform: uppercase;
         }
 
         tr:nth-child(even) {
@@ -107,7 +107,7 @@
         }
 
         tr:hover {
-            background-color: #e94560;
+            background-color: #ff5e62;
             color: white;
             cursor: pointer;
         }
@@ -120,12 +120,14 @@
         .button-container a {
             display: inline-block;
             padding: 12px 25px;
-            background-color: #e94560;
+            background: rgba(255, 94, 98, 0.8);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 10px;
             font-weight: 600;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(8px);
         }
 
         .button-container a:hover {
@@ -136,7 +138,7 @@
         footer {
             text-align: center;
             padding: 30px 0;
-            background: rgba(40, 40, 40, 0.9);
+            background: rgba(34, 34, 34, 0.8);
             color: #bbb;
             margin-top: 50px;
             box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
@@ -146,17 +148,6 @@
             margin: 0;
             font-size: 1.2em;
             font-weight: 400;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         @media (max-width: 600px) {
@@ -191,7 +182,7 @@
 </head>
 <body>
     <header>
-        <h1>Klasemen SEBUSE Week ke-3</h1>
+        <h1>Klasemen SEBUSE Week ke-4</h1>
     </header>
 
     <main>
@@ -202,19 +193,20 @@
                     <tr>
                         <th>Peringkat</th>
                         <th>Nama</th>
-                        <th>Total Week 1&2</th>
+                        <th>Total Week (1,2,3)</th>
                         <th>Main 1 Week 3</th>
                         <th>Main 2 Week 3</th>
                         <th>Main 3 Week 3</th>
                         <th>Main 4 Week 3</th>
                         <th>Akumulasi Jarak</th>
                     </tr>
+                    <!-- Contoh Data -->
                     <tr>
                         <th>1</th>
                         <td>Maulidin Hanafi</td>
-                        <td>181,34 KM</td>
-                        <td>10,31 KM</td>
-                        <td>25,33 KM</td>
+                        <td>216,98 KM</td>
+                        <td>-</td>
+                        <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>216,98 KM</td>
@@ -222,24 +214,25 @@
                     <tr>
                         <th>2</th>
                         <td>Muhammad Ridhwan</td>
-                        <td>37,26 KM</td>
-                        <td>30,31 KM</td>
-                        <td>21,01 KM</td>
+                        <td>88,58 KM</td>
+                        <td>-</td>
+                        <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>88,58 KM</td>
                     </tr>
+
                     <tr>
                         <th>3</th>
                         <td>Robbi Irham</td>
-                        <td>40,43 KM</td>
+                        <td>32,85 KM</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>40,43 KM</td>
+                        <td>32,85 KM</td>
                     </tr>
-                   
+
                     <tr>
                         <th>4</th>
                         <td>Muhammad Fadhillah</td>
@@ -250,9 +243,10 @@
                         <td>-</td>
                         <td>11,18 KM</td>
                     </tr>
+
                     <tr>
                         <th>5</th>
-                        <td>Achmad afif Ainurroziqin</td>
+                        <td>Achmad Afif Ainurroziqin </td>
                         <td>4,00 KM</td>
                         <td>-</td>
                         <td>-</td>
@@ -260,10 +254,11 @@
                         <td>-</td>
                         <td>4,00 KM</td>
                     </tr>
+                    
                 </table>
             </div>
-            <div style="text-align: center; margin-top: 20px;">
-                <a href="index.html" style="display: inline-block; padding: 10px 20px; background-color: #ff5e62; color: white; text-decoration: none; border-radius: 5px; font-weight: 600;">Kembali ke Beranda</a>
+            <div class="button-container">
+                <a href="index.html">Kembali ke Beranda</a>
             </div>
         </section>
     </main>
