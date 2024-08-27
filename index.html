@@ -11,27 +11,65 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #2b2b2b, #1c1c1c);
+            background: #1c1c1c;
             color: #ddd;
+            overflow-x: hidden;
+            background: linear-gradient(135deg, #2b2b2b, #1c1c1c);
+            animation: bgShift 10s infinite alternate ease-in-out;
+        }
+
+        @keyframes bgShift {
+            0% {
+                background: linear-gradient(135deg, #2b2b2b, #1c1c1c);
+            }
+            100% {
+                background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
+            }
+        }
+
+        /* Background Partikel Animasi */
+        #particles-js {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
         }
 
         header {
-            background: rgba(40, 40, 40, 0.9);
-            color: #e0e0e0;
-            padding: 40px 0;
+            background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
+            color: #fff;
+            padding: 60px 0;
             text-align: center;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
+            position: relative;
+            z-index: 1;
+            animation: bounceIn 1s ease-in-out;
         }
+
+        @keyframes bounceIn {
+            0% {
+                transform: scale(0.8);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+       
 
         header h1 {
             margin: 0;
-            font-size: 2.8em;
+            font-size: 3.2em;
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
+            background: linear-gradient(135deg, #ff8c00, #ff0099);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            animation: textGlow 2s infinite alternate, fadeInUp 1.5s ease-in-out;
         }
 
         .dashboard {
@@ -39,25 +77,34 @@
             justify-content: space-around;
             flex-wrap: wrap;
             margin: 50px auto;
-            max-width: 1000px;
+            max-width: 1100px;
             padding: 0 20px;
-            animation: fadeIn 1s ease-in-out;
+            animation: fadeIn 1.2s ease-in-out;
         }
 
         .dashboard a {
             text-decoration: none;
             color: #e0e0e0;
-            background: rgba(50, 50, 50, 0.9);
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+            background: linear-gradient(135deg, #323232, #505050);
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
             text-align: center;
-            font-size: 1.4em;
-            width: 220px;
-            margin: 15px;
-            transition: all 0.3s ease;
+            font-size: 1.5em;
+            width: 240px;
+            margin: 20px;
+            transition: all 0.4s ease;
             position: relative;
             overflow: hidden;
+            transform: scale(1);
+            animation: zoomIn 1s ease-in-out;
+        }
+
+        .dashboard a i {
+            font-size: 2em;
+            margin-bottom: 10px;
+            display: block;
+            transition: transform 0.4s ease;
         }
 
         .dashboard a::before {
@@ -78,23 +125,46 @@
         }
 
         .dashboard a:hover {
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8);
-            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(255, 140, 0, 0.8);
+            transform: translateY(-10px) scale(1.1);
+            background: linear-gradient(135deg, #505050, #737373);
+        }
+
+        .dashboard a:hover i {
+            color: #ff8c00;
+            transform: scale(1.3);
+            animation: glow 1s infinite alternate;
+        }
+
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 140, 0, 0.7), 0 0 20px rgba(255, 140, 0, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 140, 0, 0.9), 0 0 30px rgba(255, 140, 0, 0.7);
+            }
         }
 
         footer {
             text-align: center;
             padding: 30px 0;
-            background: rgba(40, 40, 40, 0.9);
+            background: linear-gradient(135deg, #1c1c1c, #2b2b2b);
             color: #bbb;
-            margin-top: 50px;
+            margin-top: 60px;
             box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+            animation: fadeIn 1s ease-in-out;
         }
 
         footer p {
             margin: 0;
             font-size: 1.2em;
             font-weight: 400;
+            animation: fadeInUp 1s ease-in-out;
+        }
+
+        footer p a {
+            color: #ff8c00;
+            text-decoration: none;
         }
 
         /* Animasi untuk kemunculan elemen */
@@ -106,6 +176,44 @@
             100% {
                 opacity: 1;
                 transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes textGlow {
+            0% {
+                text-shadow: 0 0 10px rgba(255, 0, 153, 0.7), 0 0 20px rgba(255, 140, 0, 0.7), 0 0 30px rgba(255, 0, 153, 0.5);
+            }
+            100% {
+                text-shadow: 0 0 20px rgba(255, 0, 153, 0.9), 0 0 30px rgba(255, 140, 0, 0.9), 0 0 40px rgba(255, 0, 153, 0.7);
+            }
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0);
+            }
+            100% {
+                transform: scale(1);
             }
         }
 
@@ -121,22 +229,133 @@
             }
         }
     </style>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script> <!-- Ikon Font Awesome -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0"></script> <!-- Partikel.js -->
 </head>
 <body>
+    <div id="particles-js"></div> <!-- Background Partikel -->
+
     <header>
-        <h1>Klasemen SEBUSE Oil Movefit 2.0</h1>
+        <h1>Klasemen Olahraga</h1>
     </header>
 
-    <!-- Dashboard Menu -->
     <div class="dashboard">
-        <a href="lari-male.html">Lari (Male)</a>
-        <a href="jalan-female.html">Jalan (Female)</a>
-        <a href="sepeda-male.html">Sepeda (Male)</a>
-        <a href="sepeda-female.html">Sepeda (Female)</a>
+        <a href="lari-male.html"><i class="fas fa-running"></i>Lari (Male)</a>
+        <a href="jalan-female.html"><i class="fas fa-walking"></i>Jalan (Female)</a>
+        <a href="sepeda-male.html"><i class="fas fa-biking"></i>Sepeda (Male)</a>
+        <a href="sepeda-female.html"><i class="fas fa-bicycle"></i>Sepeda (Female)</a>
     </div>
-    
+
     <footer>
-        <p>&copy; 2024 PT Kilang Pertamina Internasional RU II Dumai - Oil Movement</p>
+        <p>SEBUSE Event © 2024 | <a href="#">Kebijakan Privasi</a></p>
     </footer>
+
+    <!-- Inisialisasi Partikel.js -->
+    <script>
+        particlesJS("particles-js", {
+            "particles": {
+                "number": {
+                    "value": 100,
+                    "density": {
+                        "enable": true,
+                        "value_area": 800
+                    }
+                },
+                "color": {
+                    "value": "#ffffff"
+                },
+                "shape": {
+                    "type": "circle",
+                    "stroke": {
+                        "width": 0,
+                        "color": "#000000"
+                    },
+                    "polygon": {
+                        "nb_sides": 5
+                    }
+                },
+                "opacity": {
+                    "value": 0.5,
+                    "random": false,
+                    "anim": {
+                        "enable": false,
+                        "speed": 1,
+                        "opacity_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "size": {
+                    "value": 3,
+                    "random": true,
+                    "anim": {
+                        "enable": false,
+                        "speed": 40,
+                        "size_min": 0.1,
+                        "sync": false
+                    }
+                },
+                "line_linked": {
+                    "enable": true,
+                    "distance": 150,
+                    "color": "#ffffff",
+                    "opacity": 0.4,
+                    "width": 1
+                },
+                "move": {
+                    "enable": true,
+                    "speed": 6,
+                    "direction": "none",
+                    "random": false,
+                    "straight": false,
+                    "out_mode": "out",
+                    "attract": {
+                        "enable": false,
+                        "rotateX": 600,
+                        "rotateY": 1200
+                    }
+                }
+            },
+            "interactivity": {
+                "detect_on": "canvas",
+                "events": {
+                    "onhover": {
+                        "enable": true,
+                        "mode": "repulse"
+                    },
+                    "onclick": {
+                        "enable": true,
+                        "mode": "push"
+                    },
+                    "resize": true
+                },
+                "modes": {
+                    "grab": {
+                        "distance": 400,
+                        "line_linked": {
+                            "opacity": 1
+                        }
+                    },
+                    "bubble": {
+                        "distance": 400,
+                        "size": 40,
+                        "duration": 2,
+                        "opacity": 8,
+                        "speed": 3
+                    },
+                    "repulse": {
+                        "distance": 200,
+                        "duration": 0.4
+                    },
+                    "push": {
+                        "particles_nb": 4
+                    },
+                    "remove": {
+                        "particles_nb": 2
+                    }
+                }
+            },
+            "retina_detect": true
+        });
+    </script>
 </body>
 </html>
