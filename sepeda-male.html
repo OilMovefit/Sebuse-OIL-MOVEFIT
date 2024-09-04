@@ -11,10 +11,18 @@
             font-family: 'Poppins', sans-serif;
             margin: 0;
             padding: 0;
-            background: #1a1a1a;
+            background: linear-gradient(135deg, #141e30, #243b55);
             color: #ddd;
             overflow-x: hidden;
-            background: linear-gradient(135deg, #222222, #111111);
+            animation: bgShift 10s infinite alternate ease-in-out;
+        }
+        @keyframes bgShift {
+            0% {
+                background: linear-gradient(135deg, #141e30, #243b55);
+            }
+            100% {
+                background: linear-gradient(135deg, #243b55, #141e30);
+            }
         }
 
         header {
@@ -27,6 +35,16 @@
             backdrop-filter: blur(10px);
             color: #fff;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+            animation: slideInDown 1s ease-out;
+        }
+
+        @keyframes slideInDown {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         header h1 {
@@ -35,8 +53,10 @@
             font-weight: 700;
             letter-spacing: 2px;
             text-transform: uppercase;
-            color: #ff8c00;
-            background: linear-gradient(135deg, #ff8c00, #ff0099);
+            color: #ffcc00;
+            text-shadow: 0 0 20px #ffcc00b3, 0 0 40px rgba(255, 204, 0, 0.5);
+            animation: textGlow 2s infinite alternate;
+            background: linear-gradient(135deg, #ffcc00, #ffcc00b3);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -50,6 +70,16 @@
             border-radius: 15px;
             box-shadow: 0 6px 20px rgba(0, 0, 0, 0.6);
             backdrop-filter: blur(10px);
+            animation: fadeIn 1.5s ease-out;
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
         }
 
         section {
@@ -67,10 +97,22 @@
             margin-bottom: 30px;
             text-align: center;
             text-transform: uppercase;
-            background: linear-gradient(135deg, #ff8c00, #ff0099);
+            background: linear-gradient(135deg, #ffcc00, #ffcc00b3);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
+            animation: zoomIn 1.2s ease-out;
+        }
+
+        @keyframes zoomIn {
+            0% {
+                transform: scale(0.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
         }
 
         .table-container {
@@ -79,6 +121,16 @@
             border-radius: 15px;
             box-shadow: 0 6px 12px rgba(0, 0, 0, 0.6);
             overflow-x: auto;
+            animation: slideInUp 1s ease-out;
+        }
+
+        @keyframes slideInUp {
+            0% {
+                transform: translateY(100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
         }
 
         table {
@@ -91,13 +143,13 @@
             padding: 15px;
             text-align: center;
             font-size: 1.1em;
-            color: #e0e0e0;
+            color: #ffffff;
             transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         th {
-            background-color: #ff5e62;
-            color: white;
+            background-color: #243b55;
+            color: #ffcc00;
             font-weight: 600;
             text-transform: uppercase;
         }
@@ -107,21 +159,24 @@
         }
 
         tr:hover {
-            background-color: #ff5e62;
-            color: white;
+            background-color: #243b55;
+            color: #ffcc00;
             cursor: pointer;
+            transition: transform 0.3s ease;
+            transform: scale(1.02);
         }
 
         .button-container {
             text-align: center;
             margin-top: 30px;
+            animation: fadeIn 2s ease-out;
         }
 
         .button-container a {
             display: inline-block;
             padding: 12px 25px;
-            background: rgba(255, 94, 98, 0.8);
-            color: white;
+            background: #243b55;
+            color: #ffcc00;
             text-decoration: none;
             border-radius: 10px;
             font-weight: 600;
@@ -131,7 +186,7 @@
         }
 
         .button-container a:hover {
-            background-color: #ff5e62;
+            background-color: #243b55;
             transform: translateY(-3px);
         }
 
@@ -142,6 +197,7 @@
             color: #bbb;
             margin-top: 50px;
             box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.4);
+            animation: slideInUp 1s ease-out;
         }
 
         footer p {
@@ -182,89 +238,85 @@
 </head>
 <body>
     <header>
-        <h1>Klasemen SEBUSE Week ke-4</h1>
+        <h1>Klasemen SEBUSE Week ke-5</h1>
     </header>
 
     <main>
         <section>
             <h2>Sepeda (Male)</h2>
             <div class="table-container">
+                <p style="text-align: center; font-style: italic; color: #bbb;">Last Modified: 4 September 2024</p> <!-- Tanggal Modifikasi -->
                 <table>
                     <tr>
                         <th>Peringkat</th>
                         <th>Nama</th>
-                        <th>Total Week (1,2,3)</th>
-                        <th>Main 1 Week 4</th>
-                        <th>Main 2 Week 4</th>
-                        <th>Main 3 Week 4</th>
-                        <th>Main 4 Week 4</th>
+                        <th>Total Week (1-4)</th>
+                        <th>Main 1 Week 5</th>
+                        <th>Main 2 Week 5</th>
+                        <th>Main 3 Week 5</th>
+                        <th>Main 4 Week 5</th>
                         <th>Akumulasi Jarak</th>
                     </tr>
-                    <!-- Contoh Data -->
                     <tr>
                         <th>1</th>
                         <td>Maulidin Hanafi</td>
-                        <td>216,98 KM</td>
-                        <td>16,18 KM</td>
+                        <td>233,16 km</td>
+                        <td>34,20 km</td>
+                        <td>31,03 km</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>-</td>
-                        <td>233,16 KM</td>
+                        <td>298,39 km</td>
                     </tr>
                     <tr>
                         <th>2</th>
                         <td>Muhammad Ridhwan</td>
-                        <td>88,58 KM</td>
-                        <td>20,55 KM</td>
+                        <td>130,86 km</td>
+                        <td>25,09 km</td>
                         <td>21,73 KM</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>130,86 KM</td>
+                        <td>155,95 km</td>
                     </tr>
                     <tr>
                         <th>3</th>
                         <td>Gustami</td>
+                        <td>62,13 km</td>
+                        <td>20,40 km</td>
+                        <td>18,36 km</td>
                         <td>-</td>
-                        <td>12,66 KM</td>
-                        <td>28,94 KM</td>
-                        <td>20,53 KM</td>
                         <td>-</td>
-                        <td>62,13 KM</td>
+                        <td>100,89 km</td>
                     </tr>
                     <tr>
                         <th>4</th>
                         <td>Robbi Irham</td>
-                        <td>32,85 KM</td>
+                        <td>32,85 km</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>32,85 KM</td>
+                        <td>32,85 km</td>
                     </tr>
-                    
-
                     <tr>
                         <th>5</th>
                         <td>Muhammad Fadhillah</td>
-                        <td>11,18 KM</td>
+                        <td>11,18 km</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>11,18 KM</td>
+                        <td>11,18 km</td>
                     </tr>
-
                     <tr>
                         <th>6</th>
-                        <td>Achmad Afif Ainurroziqin </td>
-                        <td>4,00 KM</td>
+                        <td>Achmad Afif Ainurroziqin</td>
+                        <td>4,00 km</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
                         <td>-</td>
-                        <td>4,00 KM</td>
+                        <td>4,00 km</td>
                     </tr>
-                    
                 </table>
             </div>
             <div class="button-container">
